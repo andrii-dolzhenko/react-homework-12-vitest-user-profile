@@ -4,6 +4,10 @@ A small React application created to practice testing asynchronous component log
 
 The `UserProfile` component fetches user data from JSONPlaceholder and handles the three main states of an asynchronous request: loading, success, and error.
 
+## Live Demo
+
+https://andrii-dolzhenko.github.io/react-homework-12-vitest-user-profile/
+
 ## Features
 
 - Fetches user data asynchronously from JSONPlaceholder
