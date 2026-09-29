@@ -1,16 +1,100 @@
-# React + Vite
+# React Homework 12 — Async User Profile Testing
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A small React application created to practice testing asynchronous component logic with Vitest and React Testing Library.
 
-Currently, two official plugins are available:
+The `UserProfile` component fetches user data from JSONPlaceholder and handles the three main states of an asynchronous request: loading, success, and error.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Fetches user data asynchronously from JSONPlaceholder
+- Displays a loading state while the request is pending
+- Renders user profile data after a successful request
+- Displays an error state when the request fails
+- Supports retrying a failed request with the `Try Again` button
+- Generates user initials dynamically from the user's name
+- Provides a responsive desktop and mobile interface
+- Uses mocked `fetch` requests in tests without relying on the external API
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Testing
 
-## Expanding the Oxlint configuration
+The project uses:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+- Vitest
+- React Testing Library
+- Testing Library `jest-dom`
+- Testing Library `user-event`
+- jsdom
+
+The `UserProfile` component is covered by four test scenarios:
+
+1. Displays the loading state while the request is pending
+2. Renders the user profile after a successful request
+3. Displays the error state when the request fails
+4. Retries the request and renders the profile after clicking `Try Again`
+
+API requests are mocked during testing, so the test suite does not depend on the availability of the external service.
+
+## Test Results
+
+![Vitest test results](docs/tests-result.png)
+
+## Installation
+
+~~~bash
+git clone https://github.com/andrii-dolzhenko/react-homework-12-vitest-user-profile.git
+cd react-homework-12-vitest-user-profile
+npm install
+~~~
+
+## Run the Application
+
+~~~bash
+npm run dev
+~~~
+
+## Run Tests
+
+~~~bash
+npm test
+~~~
+
+Run Vitest in watch mode:
+
+~~~bash
+npm run test:watch
+~~~
+
+## Code Quality
+
+Run Oxlint:
+
+~~~bash
+npm run lint
+~~~
+
+Create a production build:
+
+~~~bash
+npm run build
+~~~
+
+## Tech Stack
+
+- React 19
+- Vite
+- Vitest
+- React Testing Library
+- jsdom
+- Oxlint
+
+## API
+
+User data is loaded from:
+
+~~~text
+https://jsonplaceholder.typicode.com/users/1
+~~~
+
+## Author
+
+© 2026 Andrii Dolzhenko. All Rights Reserved.
